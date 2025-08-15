@@ -1,3 +1,4 @@
+import "./ConfirmDelete.css";
 export const ConfirmDelete = ({
   closeToast,
   taskId,

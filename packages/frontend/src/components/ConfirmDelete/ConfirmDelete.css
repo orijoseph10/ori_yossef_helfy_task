@@ -1,0 +1,14 @@
+.toast-btn {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.toast-btn-yes {
+  background-color: var(--toast-yes-bg);
+  color: white;
+}
+.toast-btn-no {
+  background-color: var(--toast-no-bg);
+  color: var(--text-color);
+}

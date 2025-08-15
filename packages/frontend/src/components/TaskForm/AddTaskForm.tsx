@@ -3,7 +3,7 @@ import { useTasks } from "../../hooks/useTasks";
 import type { Task } from "../../../../backend/src/interfaces/Task";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import "./TaskForm.css";
+import "./AddTaskForm.css";
 
 interface Props {
   editingTask: Task | null;
