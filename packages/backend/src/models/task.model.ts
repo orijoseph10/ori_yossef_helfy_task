@@ -10,6 +10,7 @@ let tasks: Task[] = [
     completed: true,
     createdAt: new Date(),
     priority: "high",
+    dueDate: new Date(),
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ let tasks: Task[] = [
     completed: false,
     createdAt: new Date(),
     priority: "medium",
+    dueDate: new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000),
   },
 ];
 
