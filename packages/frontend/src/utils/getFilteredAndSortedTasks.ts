@@ -26,6 +26,13 @@ export const getFilteredAndSortedTasks = (
           return priorityOrder[a.priority] - priorityOrder[b.priority];
         case "title":
           return a.title.localeCompare(b.title);
+        case "dueDate":
+          if (a.dueDate && b.dueDate) {
+            return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
+          }
+          if (a.dueDate) return -1;
+          if (b.dueDate) return 1;
+          return 0;
         case "date":
         default:
           return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();

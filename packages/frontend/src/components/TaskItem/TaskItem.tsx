@@ -2,6 +2,7 @@ import type { Task } from "../../../../backend/src/interfaces/Task";
 import { useTasks } from "../../hooks/useTasks";
 import { toast } from "react-toastify";
 import { ConfirmDelete } from "../ConfirmDelete/ConfirmDelete";
+import "./TaskItem.css";
 
 interface Props {
   task: Task;
@@ -28,6 +29,7 @@ const TaskItem = ({ task, onEdit }: Props) => {
       <div className="task-details">
         <h3>{task.title}</h3>
         <p>{task.description}</p>
+        {task.dueDate && <p className="due-date">Due: {new Date(task.dueDate).toLocaleDateString()}</p>}
         <span className={`priority-badge ${getPriorityClassName()}`}>{task.priority}</span>
       </div>
       <div className="task-actions">

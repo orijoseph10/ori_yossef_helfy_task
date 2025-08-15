@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useTasks } from "../../hooks/useTasks";
 import type { Task } from "../../../../backend/src/interfaces/Task";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import "./TaskForm.css";
 
 interface Props {
@@ -12,6 +14,7 @@ const TaskForm = ({ editingTask, onCancelEdit }: Props) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState<"low" | "medium" | "high">("medium");
+  const [dueDate, setDueDate] = useState<Date | null>(null);
   const { createTask, updateTask } = useTasks();
 
   useEffect(() => {
@@ -19,10 +22,12 @@ const TaskForm = ({ editingTask, onCancelEdit }: Props) => {
       setTitle(editingTask.title);
       setDescription(editingTask.description);
       setPriority(editingTask.priority);
+      setDueDate(editingTask.dueDate ? new Date(editingTask.dueDate) : null);
     } else {
       setTitle("");
       setDescription("");
       setPriority("medium");
+      setDueDate(null);
     }
   }, [editingTask]);
 
@@ -30,16 +35,24 @@ const TaskForm = ({ editingTask, onCancelEdit }: Props) => {
     e.preventDefault();
     if (!title.trim() || !description.trim()) return;
 
+    const taskData = {
+      title,
+      description,
+      priority,
+      dueDate: dueDate || undefined,
+    };
+
     if (editingTask) {
-      updateTask({ id: editingTask.id, title, description, priority });
+      updateTask({ id: editingTask.id, ...taskData });
       onCancelEdit();
     } else {
-      createTask({ title, description, priority });
+      createTask(taskData);
     }
 
     setTitle("");
     setDescription("");
     setPriority("medium");
+    setDueDate(null);
   };
 
   return (
@@ -52,11 +65,14 @@ const TaskForm = ({ editingTask, onCancelEdit }: Props) => {
         onChange={(e) => setDescription(e.target.value)}
         required
       />
-      <select value={priority} onChange={(e) => setPriority(e.target.value as "low" | "medium" | "high")}>
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
-      </select>
+      <div className="form-row">
+        <select value={priority} onChange={(e) => setPriority(e.target.value as "low" | "medium" | "high")}>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <DatePicker selected={dueDate} onChange={(date: Date | null) => setDueDate(date)} placeholderText="Due Date" />
+      </div>
       <div className="form-actions">
         <button type="submit">{editingTask ? "Update Task" : "Add Task"}</button>
         {editingTask && (

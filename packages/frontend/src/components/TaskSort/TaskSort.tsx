@@ -14,6 +14,7 @@ const TaskSort = ({ sortOrder, setSortOrder }: Props) => {
         <option value="date">Date</option>
         <option value="priority">Priority</option>
         <option value="title">Title</option>
+        <option value="dueDate">Due Date</option>
       </select>
     </div>
   );
