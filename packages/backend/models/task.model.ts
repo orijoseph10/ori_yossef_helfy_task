@@ -1,4 +1,4 @@
-import { Task } from "../interfaces/Task";
+import { CreateTaskDto, UpdateTaskDto, Task } from "../interfaces/Task";
 
 // Database data
 let nextId = 3;
@@ -29,7 +29,7 @@ export const getTaskById = (id: number): Task | undefined => {
   return tasks.find((task) => task.id === id);
 };
 
-export const createTask = (taskData: Omit<Task, "id" | "createdAt" | "completed">): Task => {
+export const createTask = (taskData: CreateTaskDto): Task => {
   const newTask: Task = {
     id: nextId++,
     ...taskData,
@@ -40,7 +40,7 @@ export const createTask = (taskData: Omit<Task, "id" | "createdAt" | "completed"
   return newTask;
 };
 
-export const updateTask = (id: number, taskData: Partial<Omit<Task, "id" | "createdAt">>): Task | null => {
+export const updateTask = (id: number, taskData: UpdateTaskDto): Task | null => {
   const taskIndex = tasks.findIndex((task) => task.id === id);
   if (taskIndex === -1) {
     return null;
