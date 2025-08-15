@@ -1,5 +1,7 @@
 import type { Task } from "../../../backend/interfaces/Task";
 import { useTasks } from "../hooks/useTasks";
+import { toast } from "react-toastify";
+import { ConfirmDelete } from "./ConfirmDelete";
 
 interface Props {
   task: Task;
@@ -10,9 +12,11 @@ const TaskItem = ({ task, onEdit }: Props) => {
   const { deleteTask, toggleTask } = useTasks();
 
   const handleDelete = () => {
-    if (window.confirm(`Are you sure you want to delete "${task.title}"?`)) {
-      deleteTask(task.id);
-    }
+    toast(<ConfirmDelete taskId={task.id} closeToast={() => toast.dismiss()} deleteTask={deleteTask} />, {
+      autoClose: false,
+      closeButton: false,
+      position: "top-center",
+    });
   };
 
   const getPriorityClassName = () => {
