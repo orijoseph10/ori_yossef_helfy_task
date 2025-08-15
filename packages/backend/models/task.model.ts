@@ -14,7 +14,7 @@ let tasks: Task[] = [
   {
     id: 2,
     title: "Task 2",
-    description: "Taks 2 description",
+    description: "Task 2 description",
     completed: false,
     createdAt: new Date(),
     priority: "medium",

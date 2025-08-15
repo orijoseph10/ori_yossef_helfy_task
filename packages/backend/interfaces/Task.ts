@@ -11,7 +11,7 @@ export interface Task {
 export const createTaskSchema = z.object({
   title: z.string().min(1, "Title cannot be empty."),
   description: z.string().min(1, "Description cannot be empty."),
-  priority: z.enum(["low", "medium", "high"]),
+  priority: z.enum(["low", "medium", "high"]).optional().default("low"),
 });
 
 export const updateTaskSchema = z.object({
