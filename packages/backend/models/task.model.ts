@@ -5,16 +5,16 @@ let nextId = 3;
 let tasks: Task[] = [
   {
     id: 1,
-    title: "Learn Monorepos",
-    description: "Understand how to use pnpm workspaces.",
+    title: "Task 1",
+    description: "Task 1 description",
     completed: true,
     createdAt: new Date(),
     priority: "high",
   },
   {
     id: 2,
-    title: "Build a REST API",
-    description: "Create a full-featured REST API with Express.",
+    title: "Task 2",
+    description: "Taks 2 description",
     completed: false,
     createdAt: new Date(),
     priority: "medium",
