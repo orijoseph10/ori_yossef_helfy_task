@@ -2,12 +2,6 @@
 
 This is a full-stack task management application built using a pnpm monorepo. It features a React (TypeScript) frontend and an Express (TypeScript) backend, with a shared package for common types to ensure type safety across the entire application.
 
-## Tech Stack
-
-- Monorepo: pnpm
-- Frontend: React, TypeScript, Vite, React Query, Axios, react-toastify, react-beautiful-dnd
-- Backend: Node.js, Express, TypeScript, Zod, ts-node
-
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
