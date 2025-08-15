@@ -1,4 +1,4 @@
-import type { Task } from "../../../backend/interfaces/Task";
+import type { Task } from "../../../backend/src/interfaces/Task";
 import { useTasks } from "../hooks/useTasks";
 import { toast } from "react-toastify";
 import { ConfirmDelete } from "./ConfirmDelete";

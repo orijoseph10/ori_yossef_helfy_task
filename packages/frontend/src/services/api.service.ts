@@ -1,5 +1,5 @@
 import { apiClient } from "../constants";
-import type { Task, CreateTaskDto, UpdateTaskDto } from "../../../backend/interfaces/Task";
+import type { Task, CreateTaskDto, UpdateTaskDto } from "../../../backend/src/interfaces/Task";
 
 export const getTasks = async (): Promise<Task[]> => {
   try {

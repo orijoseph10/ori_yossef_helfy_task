@@ -1,6 +1,6 @@
 import { useTasks } from "../hooks/useTasks";
 import TaskItem from "./TaskItem";
-import type { Task } from "../../../backend/interfaces/Task";
+import type { Task } from "../../../backend/src/interfaces/Task";
 
 interface Props {
   filter: "all" | "completed" | "pending";

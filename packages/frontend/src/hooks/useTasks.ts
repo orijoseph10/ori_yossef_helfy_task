@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getTasks, createTask, updateTask, deleteTask, toggleTaskCompletion } from "../services/api.service";
-import type { CreateTaskDto, UpdateTaskDto } from "../../../backend/interfaces/Task";
+import type { CreateTaskDto, UpdateTaskDto } from "../../../backend/src/interfaces/Task";
 
 export const useTasks = () => {
   const queryClient = useQueryClient();

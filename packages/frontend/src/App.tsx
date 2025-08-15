@@ -2,7 +2,7 @@ import { useState } from "react";
 import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
 import TaskFilter from "./components/TaskFilter";
-import type { Task } from "../../backend/interfaces/Task";
+import type { Task } from "../../backend/src/interfaces/Task";
 
 const App = () => {
   const [filter, setFilter] = useState<"all" | "completed" | "pending">("all");
