@@ -3,6 +3,7 @@ import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
 import TaskFilter from "./components/TaskFilter";
 import TaskSort from "./components/TaskSort";
+import ThemeToggle from "./components/ThemeToggle";
 import type { Task } from "../../backend/src/interfaces/Task";
 import type { FilterOptions, SortOrderOptions } from "./types";
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <TaskSort sortOrder={sortOrder} setSortOrder={setSortOrder} />
+        <ThemeToggle />
       </div>
       <TaskList filter={filter} onEdit={handleEdit} searchTerm={searchTerm} sortOrder={sortOrder} />
       <TaskForm editingTask={editingTask} onCancelEdit={handleCancelEdit} />
