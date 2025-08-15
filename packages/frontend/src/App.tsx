@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TaskList from "./components/TaskList/TaskList";
-import TaskForm from "./components/TaskForm/TaskForm";
+import AddTaskForm from "./components/TaskForm/AddTaskForm";
 import "./App.css";
 import TaskFilter from "./components/TaskFilter/TaskFilter";
 import TaskSort from "./components/TaskSort/TaskSort";
@@ -38,7 +38,7 @@ const App = () => {
         <ThemeToggle />
       </div>
       <TaskList filter={filter} onEdit={handleEdit} searchTerm={searchTerm} sortOrder={sortOrder} />
-      <TaskForm editingTask={editingTask} onCancelEdit={handleCancelEdit} />
+      <AddTaskForm editingTask={editingTask} onCancelEdit={handleCancelEdit} />
     </div>
   );
 };

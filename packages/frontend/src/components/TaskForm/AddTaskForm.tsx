@@ -10,7 +10,7 @@ interface Props {
   onCancelEdit: () => void;
 }
 
-const TaskForm = ({ editingTask, onCancelEdit }: Props) => {
+const AddTaskForm = ({ editingTask, onCancelEdit }: Props) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState<"low" | "medium" | "high">("medium");
@@ -85,4 +85,4 @@ const TaskForm = ({ editingTask, onCancelEdit }: Props) => {
   );
 };
 
-export default TaskForm;
+export default AddTaskForm;
