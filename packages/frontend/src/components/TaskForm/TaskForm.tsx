@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useTasks } from "../hooks/useTasks";
-import type { Task } from "../../../backend/src/interfaces/Task";
+import { useTasks } from "../../hooks/useTasks";
+import type { Task } from "../../../../backend/src/interfaces/Task";
+import "./TaskForm.css";
 
 interface Props {
   editingTask: Task | null;

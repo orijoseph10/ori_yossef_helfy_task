@@ -1,4 +1,5 @@
-import type { SortOrderOptions } from "../types";
+import type { SortOrderOptions } from "../../types";
+import "./TaskSort.css";
 
 interface Props {
   sortOrder: SortOrderOptions;

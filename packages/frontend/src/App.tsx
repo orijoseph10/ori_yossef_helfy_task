@@ -1,9 +1,10 @@
 import { useState } from "react";
-import TaskList from "./components/TaskList";
-import TaskForm from "./components/TaskForm";
-import TaskFilter from "./components/TaskFilter";
-import TaskSort from "./components/TaskSort";
-import ThemeToggle from "./components/ThemeToggle";
+import TaskList from "./components/TaskList/TaskList";
+import TaskForm from "./components/TaskForm/TaskForm";
+import "./App.css";
+import TaskFilter from "./components/TaskFilter/TaskFilter";
+import TaskSort from "./components/TaskSort/TaskSort";
+import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import type { Task } from "../../backend/src/interfaces/Task";
 import type { FilterOptions, SortOrderOptions } from "./types";
 const App = () => {

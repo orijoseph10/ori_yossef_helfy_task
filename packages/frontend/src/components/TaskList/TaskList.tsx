@@ -1,8 +1,9 @@
-import { useTasks } from "../hooks/useTasks";
-import TaskItem from "./TaskItem";
-import type { Task } from "../../../backend/src/interfaces/Task";
-import type { FilterOptions, SortOrderOptions } from "../types";
-import { getFilteredAndSortedTasks } from "../utils/getFilteredAndSortedTasks";
+import { useTasks } from "../../hooks/useTasks";
+import TaskItem from "../TaskItem/TaskItem";
+import type { Task } from "../../../../backend/src/interfaces/Task";
+import "./TaskList.css";
+import type { FilterOptions, SortOrderOptions } from "../../types";
+import { getFilteredAndSortedTasks } from "../../utils/getFilteredAndSortedTasks";
 
 interface Props {
   filter: FilterOptions;

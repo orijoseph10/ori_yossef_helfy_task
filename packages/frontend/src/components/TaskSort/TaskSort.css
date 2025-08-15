@@ -1,0 +1,15 @@
+/* Task Sort */
+.task-sort {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-sort select {
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font-size: 1em;
+}

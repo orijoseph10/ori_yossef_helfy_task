@@ -1,7 +1,7 @@
-import type { Task } from "../../../backend/src/interfaces/Task";
-import { useTasks } from "../hooks/useTasks";
+import type { Task } from "../../../../backend/src/interfaces/Task";
+import { useTasks } from "../../hooks/useTasks";
 import { toast } from "react-toastify";
-import { ConfirmDelete } from "./ConfirmDelete";
+import { ConfirmDelete } from "../ConfirmDelete/ConfirmDelete";
 
 interface Props {
   task: Task;

@@ -1,6 +1,9 @@
+import type { FilterOptions } from "../../types";
+import "./TaskFilter.css";
+
 interface Props {
-  currentFilter: "all" | "completed" | "pending";
-  setFilter: (filter: "all" | "completed" | "pending") => void;
+  currentFilter: FilterOptions;
+  setFilter: (filter: FilterOptions) => void;
 }
 
 const TaskFilter = ({ currentFilter, setFilter }: Props) => {
