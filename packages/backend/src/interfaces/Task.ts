@@ -6,12 +6,14 @@ export interface Task {
   completed: boolean;
   createdAt: Date;
   priority: "low" | "medium" | "high";
+  dueDate?: Date;
 }
 
 export const createTaskSchema = z.object({
   title: z.string().min(1, "Title cannot be empty."),
   description: z.string().min(1, "Description cannot be empty."),
   priority: z.enum(["low", "medium", "high"]).optional().default("low"),
+  dueDate: z.date().optional(),
 });
 
 export const updateTaskSchema = z.object({
@@ -19,6 +21,7 @@ export const updateTaskSchema = z.object({
   description: z.string().min(1, "Description cannot be empty.").optional(),
   priority: z.enum(["low", "medium", "high"]).optional(),
   completed: z.boolean().optional(),
+  dueDate: z.date().optional(),
 });
 
 export type CreateTaskDto = z.infer<typeof createTaskSchema>;
