@@ -7,11 +7,12 @@ import TaskSort from "./components/TaskSort/TaskSort";
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import type { Task } from "../../backend/src/interfaces/Task";
 import type { FilterOptions, SortOrderOptions } from "./types";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 const App = () => {
-  const [filter, setFilter] = useState<FilterOptions>("all");
+  const [filter, setFilter] = useLocalStorage<FilterOptions>("filter", "all");
   const [editingTask, setEditingTask] = useState<Task | null>(null);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [sortOrder, setSortOrder] = useState<SortOrderOptions>("date");
+  const [searchTerm, setSearchTerm] = useLocalStorage("searchTerm", "");
+  const [sortOrder, setSortOrder] = useLocalStorage<SortOrderOptions>("sortOrder", "date");
 
   const handleEdit = (task: Task) => {
     setEditingTask(task);
