@@ -9,6 +9,10 @@ Before you begin, ensure you have the following installed on your system:
 - Node.js (v18.x or later recommended)
 - pnpm (v8.x or later recommended)
 
+```bash
+npm i -g pnpm
+```
+
 ## Getting Started
 
 Follow these steps to get the project up and running on your local machine.
