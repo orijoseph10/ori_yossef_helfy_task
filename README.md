@@ -9,6 +9,8 @@ Before you begin, ensure you have the following installed on your system:
 - Node.js (v18.x or later recommended)
 - pnpm (v8.x or later recommended)
 
+If you don't have pnpm installed, you can install it using the following command:
+
 ```bash
 npm i -g pnpm
 ```
